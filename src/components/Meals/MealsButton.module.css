@@ -1,0 +1,19 @@
+.auction-reference{
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    position:relative;
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+.auction-reference button{
+
+        cursor: pointer;
+        font: inherit;
+        color: white;
+        background-color: #9f5ccc;
+        border: 1px solid #9f5ccc;
+        border-radius: 4px;
+        padding: 0.5rem 2.5rem;
+}
