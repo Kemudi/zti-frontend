@@ -1,0 +1,14 @@
+.box{
+    margin: 3rem auto;
+    width: 95%;
+    max-width: 200rem;
+    border-radius: 6px;
+    background-color: #825e9a;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: left;
+    /* float: right; */
+}
+.box h2{
+    color: aliceblue;
+}

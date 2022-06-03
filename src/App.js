@@ -9,6 +9,9 @@ import CartProvider from './store/CartProvider';
 import { Switch , Route} from 'react-router-dom';
 import AuthForm from './authentication/AuthForm';
 import AuctionForm from './components/Meals/AuctionForm'
+import ProtectedRoute from './routes/ProtectedRoute';
+import LoginProtectedRoute from './routes/LoginProtectedRoute';
+import UserProfile from './components/User/UserProfile';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -30,12 +33,12 @@ function App() {
           <Route path="/" exact>
             <Meals />
           </Route>
-          <Route path="/auth">
-            <AuthForm></AuthForm>
-          </Route>
-          <Route path="/addAuction">
-            <AuctionForm></AuctionForm>
-          </Route>
+          <LoginProtectedRoute path="/auth" component={AuthForm}>
+          </LoginProtectedRoute>
+          <ProtectedRoute path="/addAuction" component={AuctionForm}>
+          </ProtectedRoute>
+          <ProtectedRoute path="/user/:userId" component={UserProfile}>
+          </ProtectedRoute>
         </Switch> 
       </main>
     </CartProvider>

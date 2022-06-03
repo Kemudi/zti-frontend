@@ -5,6 +5,7 @@ import AuthContext from '../../store/auth-context';
 const AuctionForm = () => {
 
     const[sent,setSent] = useState(false);
+    const[loading, setLoading] = useState(false);
 
     const authCtx = useContext(AuthContext);
 
@@ -23,8 +24,10 @@ const AuctionForm = () => {
         const price = priceInputRef.current.value;
         const description = descriptionInputRef.current.value;
 
+        setLoading(true);
         fetch("http://localhost:8081/api/auctions/",{
             method: 'POST',
+            credentials: 'include',
             body: JSON.stringify({
                 name: name,
                 currentPrice: price,
@@ -34,6 +37,9 @@ const AuctionForm = () => {
             headers:{
                 Accept: "application/json",
                 'Content-Type' : 'application/json',
+                // 'Access-Control-Request-Method': 'POST',
+                // 'Access-Control-Allow-Credentials' : 'true',
+                // 'Access-Control-Allow-Origin': '*',
                 // Cookie: 'Authorization-Cookie='+authCtx.token,
             },
         }).then(response => {
@@ -43,7 +49,10 @@ const AuctionForm = () => {
             }else{
                 throw new Error("Nie udało się dodać ogłoszenia");
             }
-        }).catch(error => alert(error.message)).finally(console.log("elo"));
+        }).catch(error => alert(error.message))
+        .finally( () =>{
+            setLoading(false);
+        });
     }
 
     if (!sent) return (
@@ -60,7 +69,7 @@ const AuctionForm = () => {
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='description'>Description</label>
-                    <textarea id='description' required ref={descriptionInputRef} />
+                    <textarea id='description' required ref={descriptionInputRef} rows="4" cols="50"/>
                 </div>
                 <div className={classes.actions}>
                 <button>Dodaj Ogłoszenie</button>

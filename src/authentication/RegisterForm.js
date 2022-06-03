@@ -39,7 +39,7 @@ const LoginForm = () => {
                 'Content-Type' : 'application/json',
             },
         }).then(res => {
-            if(res.ok){
+            if(res.status === 201){
                 alert("Rejestracja przebiegla pomyslnie");
             }else{
                 throw new Error("Registration Failed");

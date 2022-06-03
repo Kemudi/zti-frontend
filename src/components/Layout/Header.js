@@ -20,7 +20,7 @@ const Header = (props) => {
         <Link to="/"><h1>Krakowskim Targiem</h1></Link>
         
           
-        <HeaderCartButton onClick={props.onShowCart} />
+        {authCtx.isLoggedIn && <HeaderCartButton onClick={props.onShowCart} />}
         {!authCtx.isLoggedIn && <Link to="/auth"><div><h3>Zaloguj</h3></div></Link>}
         {authCtx.isLoggedIn && <div onClick={logoutHandler}><h3>Wyloguj</h3></div>}
       </header>
