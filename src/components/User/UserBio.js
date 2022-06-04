@@ -1,9 +1,9 @@
-
+import classes from './UserProfile.module.css';
 const UserBio = (props) => {
     return(
         <div>
-            <h2>User : {props.user.username}</h2>
-            <h2>Contact : {props.user.phoneNumber}</h2>
+            <h1 className={classes.aa}>Użytkownik: {props.user.username}</h1>
+            <h1 className={classes.aa}>Kontakt: {props.user.phoneNumber}</h1>
         </div>
     );
 }

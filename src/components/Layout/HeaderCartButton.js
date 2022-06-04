@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import CartIcon from '../Cart/CartIcon';
 import CartContext from '../../store/cart-context';
 import classes from './HeaderCartButton.module.css';
+import { Link } from 'react-router-dom';
 
 const HeaderCartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
@@ -32,13 +33,14 @@ const HeaderCartButton = (props) => {
   }, [items]);
 
   return (
-    <button className={btnClasses} onClick={props.onClick}>
+    <Link to="/favourites"><button className={btnClasses}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
       <span>Twoje ulubione </span>
-      <span className={classes.badge}>{numberOfCartItems}</span>
+      {/* <span className={classes.badge}>{numberOfCartItems}</span> */}
     </button>
+    </Link>
   );
 };
 

@@ -17,7 +17,7 @@ const UserReviews = (props) =>{
             if(response.status === 200){
                 return response.json();
             }else{
-                throw new Error("Nie Udalo sie pobrac ocen uzytkownika");
+                throw new Error("Nie udało się pobrać ocen użytkownika");
             }
         }).then(data => {
             setReviews(data);
@@ -32,7 +32,7 @@ const UserReviews = (props) =>{
 
     
 
-    if(loading) return "Loading Reviews...";
+    if(loading) return "Ładowanie recenzji...";
     
     const userReviewList = reviews.map((review) => (
         <UserReview

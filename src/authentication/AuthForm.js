@@ -13,16 +13,15 @@ const AuthForm = () => {
 
   return (
     <section className={classes.auth}>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+      <h1>{isLogin ? 'Logowanie' : 'Rejestracja'}</h1>
       {isLogin && <LoginForm></LoginForm>}
       {!isLogin && <RegisterForm></RegisterForm>}
       {/* {isLoading && <p>Sending request...</p>} */}
           <button
             type='button'
-            className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? 'Create new account' : 'Login with existing account'}
+            {isLogin ? 'Utwórz nowe konto' : 'Zaloguj się istniejącym kontem'}
           </button>
     </section>
   );

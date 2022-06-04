@@ -5,8 +5,8 @@
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: #0b0b5f;
-  border: 1px solid #040331;
+  background-color: #0b0b5ff4;
+  border: 1px solid #18174b;
   color: white;
   padding: 0.25rem 2rem;
   border-radius: 20px;
@@ -17,4 +17,13 @@
 .form button:active {
   background-color: #162a96;
   border-color: #0b0b5f;
+}
+
+.aa {
+  font-size: 28px;
+  color: aliceblue;
+}
+
+.reviews{
+  background-color: #570b5f !important;
 }

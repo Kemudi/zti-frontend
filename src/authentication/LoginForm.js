@@ -41,7 +41,7 @@ const LoginForm = () => {
                 throw new Error("Authentication Failed");
             }
         }).then(data => {
-            authCtx.login(data.token);
+            authCtx.login(data.token, enteredUsername, data.id);
         })
         .catch(error=>{
             alert(error.message);
@@ -55,15 +55,15 @@ const LoginForm = () => {
         
         <form onSubmit={loginHandler}>
             <div className={classes.control}>
-                <label htmlFor='username'>Your Username</label>
+                <label htmlFor='username'>Twój nick</label>
                 <input type='text' id='username' required ref={usernameInputRef}/>
             </div>
             <div className={classes.control}>
-                <label htmlFor='password'>Your Password</label>
+                <label htmlFor='password'>Twoje hasło</label>
                 <input type='password' id='password' required ref={passwordInputRef} />
             </div>
             <div className={classes.actions}>
-                <button>Login</button>
+                <button>Zaloguj się</button>
                 <button
                     type='button'
                     className={classes.toggle}

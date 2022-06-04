@@ -7,7 +7,7 @@ import AuthContext from '../../store/auth-context';
 import { Link } from 'react-router-dom';
 
 
-const Meals = () => {
+const Meals = (props) => {
   const authCtx = useContext(AuthContext);  
 
   return (
@@ -18,7 +18,7 @@ const Meals = () => {
           <button>Dodaj swoje ogłoszenie!</button>
         </div>
         </Link>}
-      <AvailableMeals />
+      <AvailableMeals favourites={props.favourites}/>
     </Fragment>
   );
 };

@@ -10,24 +10,24 @@ const MealItemForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = +enteredAmount;
+    // const enteredAmount = amountInputRef.current.value;
+    // const enteredAmountNumber = +enteredAmount;
 
-    if (
-      enteredAmount.trim().length === 0 ||
-      enteredAmountNumber < 1 ||
-      enteredAmountNumber > 5
-    ) {
-      setAmountIsValid(false);
-      return;
-    }
+    // if (
+    //   enteredAmount.trim().length === 0 ||
+    //   enteredAmountNumber < 1 ||
+    //   enteredAmountNumber > 5
+    // ) {
+    //   setAmountIsValid(false);
+    //   return;
+    // }
 
-    props.onAddToCart(enteredAmountNumber);
+    props.onAddToCart();
   };
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <Input
+      {/* <Input
         ref={amountInputRef}
         label='Ilosc'
         input={{
@@ -38,9 +38,9 @@ const MealItemForm = (props) => {
           step: '1',
           defaultValue: '1',
         }}
-      />
+      /> */}
       <button>+ Dodaj do ulubionych </button>
-      {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
+      {!amountIsValid && <p>.</p>}
     </form>
   );
 };

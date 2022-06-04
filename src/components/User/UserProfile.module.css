@@ -1,14 +1,29 @@
 .box{
     margin: 3rem auto;
-    width: 95%;
+    width: 85%;
     max-width: 200rem;
     border-radius: 6px;
-    background-color: #825e9a;
+    background-color: #38015c;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     padding: 1rem;
     text-align: left;
     /* float: right; */
 }
 .box h2{
-    color: aliceblue;
+    color: #0b0b5ff4;
 }
+
+.box h3{
+    color: black;
+}
+
+.box h1{
+    color: aliceblue;
+    
+}
+
+.aa {
+    font-size: 28px;
+    color: aliceblue;
+  }
+

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import AuthContext from "../store/auth-context";
 import { Redirect } from "react-router-dom";
 
-const ProtectedRoute = ({component:Component,...rest    }) =>{
+const ProtectedRoute = ({component:Component,...rest}) =>{
     const authCtx = useContext(AuthContext);
     
     return(

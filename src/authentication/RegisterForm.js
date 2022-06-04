@@ -56,27 +56,27 @@ const LoginForm = () => {
     return (
         <form onSubmit={registerHandler}>
             <div className={classes.control}>
-                <label htmlFor='username'>Your Username</label>
+                <label htmlFor='username'>Nick</label>
                 <input type='text' id='username' required ref={usernameInputRef}/>
             </div>
             <div className={classes.control}>
-                <label htmlFor='password'>Your Password</label>
+                <label htmlFor='password'>Hasło</label>
                 <input type='password' id='password' required ref={passwordInputRef} />
             </div>
             <div className={classes.control}>
-                <label htmlFor='name'>Your Name</label>
+                <label htmlFor='name'>Imię</label>
                 <input type='text' id='name' required ref={nameinputRef} />
             </div>
             <div className={classes.control}>
-                <label htmlFor='email'>Your Email</label>
+                <label htmlFor='email'>E-mail</label>
                 <input type='email' id='email' required ref={emailInputRef} />
             </div>
             <div className={classes.control}>
-                <label htmlFor='phone'>Your Phone Number</label>
+                <label htmlFor='phone'>Nr telefonu</label>
                 <input type='text' id='phone' required ref={phoneInputRef} />
             </div>
             <div className={classes.actions}>
-                <button>'Login'</button>
+                <button>Zarejstruj się</button>
                 <button
                     type='button'
                     className={classes.toggle}

@@ -12,6 +12,8 @@ import AuctionForm from './components/Meals/AuctionForm'
 import ProtectedRoute from './routes/ProtectedRoute';
 import LoginProtectedRoute from './routes/LoginProtectedRoute';
 import UserProfile from './components/User/UserProfile';
+import Favourites from './components/Meals/Favourites/Favourites';
+import MyAuctions from './components/Meals/MyAuctions/MyAuctions';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -35,6 +37,10 @@ function App() {
           </Route>
           <LoginProtectedRoute path="/auth" component={AuthForm}>
           </LoginProtectedRoute>
+          <ProtectedRoute path="/favourites" component={Favourites} favourites={true}>
+          </ProtectedRoute>
+          <ProtectedRoute path="/myAuctions" component={MyAuctions} myAuctions={true}>
+          </ProtectedRoute>
           <ProtectedRoute path="/addAuction" component={AuctionForm}>
           </ProtectedRoute>
           <ProtectedRoute path="/user/:userId" component={UserProfile}>

@@ -7,9 +7,9 @@ const UserReview = (props) => {
             <div className={classes.review}>
                 <div>
                     <div >
-                        <div>{props.description}</div>
+                        <div><h3>{props.description}</h3></div>
                         <div>
-                            <h2>{props.mark}</h2>
+                            <h2>Ocena: {props.mark}</h2>
                         </div>   
                     </div>
                 </div>

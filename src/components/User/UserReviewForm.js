@@ -39,25 +39,25 @@ const UserReviewForm = (props) => {
             }
         }).then(response => {
             if(response.status === 201){
-                alert("Dodano opinie o użytkowniku");
+                alert("Dodano opinię o użytkowniku");
             }else{
-                throw new Error("Nie udało się dodać opini");
+                throw new Error("Nie udało się dodać opinii");
             }
         }).catch(error=>{
             alert(error.message);
         }).finally(()=>{
             props.refresh();
-            console.log("Dodano aukcje");
+            console.log("Dodano ogłoszenie");
         })
     }
 
     return (
         <div>
             <form className={classes.form} onSubmit={submitHandler}>
-                <textarea ref={descriptionInputRef} id="description"></textarea>
-                <Input
+            <textarea ref={descriptionInputRef} id="description" rows="4" cols="223" placeholder="Dodaj opinię..."></textarea>
+               <h1 className={classes.aa}><Input
                     ref={markInputRef}
-                    label='Ocena'
+                    label='Ocena 1-5:'
                     input={{
                         id: 'amount',
                         type: 'number',
@@ -66,9 +66,9 @@ const UserReviewForm = (props) => {
                         step: '1',
                         defaultValue: '1',
                     }}
-                />
-                <button>Oceń</button>
-                {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
+                /></h1> 
+                <button>Dodaj</button>
+                {!amountIsValid && <p>Wpisz wartość z zakresu (1-5).</p>}
             </form>
         </div>
     );

@@ -57,22 +57,22 @@ const AuctionForm = () => {
 
     if (!sent) return (
         <section className={classes.auth}>
-            <h1>Dodaj Ogłoszenie</h1>
+            <h1>Utwórz swoje ogłoszenie:</h1>
             <form onSubmit={addAuction}>
                 <div className={classes.control}>
-                    <label htmlFor='name'>Auction Name</label>
+                    <label htmlFor='name'>Tytuł ogłoszenia</label>
                     <input type='text' id='name' required ref={nameInputRef} />
                 </div>
                 <div className={classes.control}>
-                    <label htmlFor='price'>Auction Price</label>
+                    <label htmlFor='price'>Cena</label>
                     <input type="number" step="0.01" required ref={priceInputRef} />
                 </div>
                 <div className={classes.control}>
-                    <label htmlFor='description'>Description</label>
+                    <label htmlFor='description'>Opis</label>
                     <textarea id='description' required ref={descriptionInputRef} rows="4" cols="50"/>
                 </div>
                 <div className={classes.actions}>
-                <button>Dodaj Ogłoszenie</button>
+                <button>Dodaj</button>
                 <button
                     type='button'
                     className={classes.toggle}
@@ -85,9 +85,9 @@ const AuctionForm = () => {
     else{
         return(
             <section className={classes.auth}>
-                <h1>Dodaj Ogłoszenie</h1>
+                <h1>Dodaj kolejne ogłoszenie</h1>
                 <div className={classes.actions}>
-                <button>Dodaj Następną</button>
+                <button>Dodaj</button>
                 <button
                     type='button'
                     className={classes.toggle}

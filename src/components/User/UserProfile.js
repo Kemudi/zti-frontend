@@ -19,7 +19,7 @@ const UserProfile = () => {
             if(response.status === 200){
                 return response.json();
             }else{
-                throw new Error("Nie udalo sie pobrac informacji o uzytkowniku");
+                throw new Error("Nie udało się pobrać informacji o użytkowniku");
             }
         }).then(data => {
             setUser(data);
@@ -31,9 +31,9 @@ const UserProfile = () => {
 
     }, [])
 
-    if (loading) return "Loading...";
+    if (loading) return "Ładowanie...";
     else return (
-        <div className={classes.box}>
+        <div className={classes.box} >
             <UserBio
                 user={user}
             />

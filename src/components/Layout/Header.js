@@ -21,6 +21,7 @@ const Header = (props) => {
         
           
         {authCtx.isLoggedIn && <HeaderCartButton onClick={props.onShowCart} />}
+        {authCtx.isLoggedIn && <Link to="/myAuctions"><div><h3>Moje Ogłoszenia</h3></div></Link>}
         {!authCtx.isLoggedIn && <Link to="/auth"><div><h3>Zaloguj</h3></div></Link>}
         {authCtx.isLoggedIn && <div onClick={logoutHandler}><h3>Wyloguj</h3></div>}
       </header>

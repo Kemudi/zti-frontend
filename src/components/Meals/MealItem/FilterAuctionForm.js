@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import classes from '../MealsButton.module.css';
 
 const FilterAuctionForm = (props) => {
     const[loading,setLoading] = useState(false);
@@ -26,13 +27,13 @@ const FilterAuctionForm = (props) => {
             <div>
                 <div >
                     <input type='text' id='text' required ref={filterInputRef} placeholder="Szukaj..."/>
+                    <button>Filtruj</button>
+                    <button type="button" onClick={cancelFilter}>Anuluj</button>
                 </div>
-                <div >
-                    <button>Filter</button>
-                </div>
+                
             </div>
         </form>
-        <button onClick={cancelFilter}>Anuluj Filter</button>
+       
         </div>
     );
 }
